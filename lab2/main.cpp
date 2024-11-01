@@ -140,5 +140,19 @@ int main() {
 			cout << "Element = " << arr_searchV[i] << endl;
 		}
 	}
+//	Que 9
+	cout << "Question 9" << endl;
+	int u_value = 9;
+	int u_index = 4;
+	int arr_update[] = {3,5,6,2,7,8};
+	int size_update = sizeof(arr_update) / sizeof(int);
+	for (int i = 0 ; i < size_update ; i++){
+		if (i==u_index){
+			arr_update[i] = u_value;
+		}
+	}
+	for (int i = 0 ; i < size_update ; i++){
+		cout << arr_update[i] << endl;
+	}
 	return 0;
 }
