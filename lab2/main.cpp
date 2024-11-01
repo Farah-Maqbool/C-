@@ -155,15 +155,23 @@ int main() {
 		cout << arr_update[i] << endl;
 	}
 //	Que 10
+	cout << "Question 10" << endl;
 	int arr_1[] = {1,5,6,8,3};
-	int arr_2[] = {3,6,5,9};
+	int arr_2[] = {2,6,5,9};
 	int arr_1_size = sizeof(arr_1) / sizeof(int);
 	int arr_2_size = sizeof(arr_2) / sizeof(int);
 	int size_full = arr_1_size + arr_2_size;
 	int arr_ay[size_full];
-	
 	for (int i = 0 ; i < arr_1_size ; i++){
 		arr_ay[i] = arr_1[i];
+	}
+	int j_arr = 0;
+	for ( int i = arr_1_size ; i < size_full ; i++){
+		arr_ay[i] = arr_2[j_arr];
+		j_arr++;
+	}
+	for(int i = 0 ; i < size_full ; i++){
+		cout << arr_ay[i] << endl;
 	}
 	
 	return 0;
