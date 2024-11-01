@@ -120,5 +120,25 @@ int main() {
 	for (int i = 0 ; i < size_ar_7 ; i++){
 		cout << ar_7[i] << endl;
 	}
+//	Que 8
+	cout << "Question 8" << endl;
+//	By index
+	int user_index = 3;
+	int arr_search[] = {3,5,7,4,9};
+	int size_search = sizeof(arr_search) / sizeof(int);
+	for (int i = 0 ; i < size_search ; i++){
+		if (i==user_index){
+			cout << "Element = " << arr_search[i] << endl;
+		}
+	}
+//	By value
+	int user_value = 3;
+	int arr_searchV[] = {3,5,7,4,9};
+	int size_searchV = sizeof(arr_searchV) / sizeof(int);
+	for (int i = 0 ; i < size_searchV ; i++){
+		if (arr_search[i]==user_value){
+			cout << "Element = " << arr_searchV[i] << endl;
+		}
+	}
 	return 0;
 }
