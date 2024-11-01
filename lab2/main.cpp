@@ -59,21 +59,21 @@ int main() {
 	E[3] = 4;
 	E[4] = 7;
 	E[5] = 3;
-	
-	int give = 4;
+	int size_e = sizeof(E) / sizeof(int);
+	int give = 3;
 	cout << "Before" << endl;
-	for (int i = 0 ; i < 7 ; i++){
+	for (int i = 0 ; i < size_e-1 ; i++){
 		cout << E[i] << endl ;
 	}
-	for (int i = 5 ; i >= 0 ; i++){
-		E[i+1] = E[i];
-		if (i == give){
+	for (int i = size_e - 1 ; i >= 0 ; i--){
+		E[i] = E[i-1];
+		if (i == (give+1)){
 			break;
 		}
 	}
 	E[give] = 10;
-	cout << "After";
-	for (int i = 0 ; i < 7 ; i++){
+	cout << "After" << endl;
+	for (int i = 0 ; i < size_e ; i++){
 		cout << E[i] << endl ;
 	}
 	return 0;
