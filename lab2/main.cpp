@@ -93,6 +93,13 @@ int main() {
 	for (int i = 0 ; i < size_arr ; i++){
 		cout << arr[i] << endl;
 	}
-	
+//	Que 6
+	cout << "Question 6" << endl;
+	int arr_d[] = {5,2,1,4,8,9};
+	int size_arr_d = sizeof(arr_d) / sizeof(int);
+	size_arr_d--;
+	for (int i = 0 ; i < size_arr_d ; i++){
+		cout << arr_d[i] << endl;
+	}
 	return 0;
 }
