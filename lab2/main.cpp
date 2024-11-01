@@ -21,11 +21,12 @@ int main() {
 	w[1] = 3;
 	w[2] = 5;
 	w[3] = 4;
-	for  (int i = 0 ; i < 5 ; i++){
+	int size_w = sizeof(w) / sizeof(int);
+	for  (int i = 0 ; i < size_w ; i++){
 		cout << w[i] << endl;
 	}
-	for ( int i = 3 ; i >= 0 ; i--){
-		w[i+1] = w[i];
+	for ( int i = size_w - 1 ; i >= 0 ; i--){
+		w[i] = w[i-1];
 	}
 	cout  << "After" << endl;
 	w[0] = 8;
@@ -76,5 +77,8 @@ int main() {
 	for (int i = 0 ; i < size_e ; i++){
 		cout << E[i] << endl ;
 	}
+//	Que 5
+	cout << "Question 5" << endl;
+	
 	return 0;
 }
