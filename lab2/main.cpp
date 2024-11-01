@@ -101,5 +101,24 @@ int main() {
 	for (int i = 0 ; i < size_arr_d ; i++){
 		cout << arr_d[i] << endl;
 	}
+//	Que 7
+	cout << "Question 7" << endl;
+	int ar_7[] = {2,3,4,5,7,8};
+	int size_ar_7 = sizeof(ar_7) / sizeof(int);
+	int user_give = 3;
+	cout << "Before" << endl;
+	for (int i = 0 ; i < size_ar_7 ; i++){
+		cout << ar_7[i] << endl;
+	}
+	for (int i = 0 ; i < size_ar_7 ; i++){
+		if (i >= user_give){
+			ar_7[i] = ar_7[i+1];
+		}
+	}
+	size_ar_7--;
+	cout << "After" << endl;
+	for (int i = 0 ; i < size_ar_7 ; i++){
+		cout << ar_7[i] << endl;
+	}
 	return 0;
 }
