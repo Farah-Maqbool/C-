@@ -79,6 +79,20 @@ int main() {
 	}
 //	Que 5
 	cout << "Question 5" << endl;
+	int arr[6] = {5,2,7,1,8,3};
+	int size_arr = sizeof(arr) / sizeof(int);
+	cout << "Before" << endl;
+	for (int i = 0 ; i < size_arr ; i++){
+		cout << arr[i] << endl;
+	}
+	for (int i = 0 ; i < size_arr ; i++){
+		arr[i] = arr[i+1];
+	}
+	size_arr--;
+	cout << "After" << endl;
+	for (int i = 0 ; i < size_arr ; i++){
+		cout << arr[i] << endl;
+	}
 	
 	return 0;
 }
