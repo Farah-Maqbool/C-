@@ -21,7 +21,6 @@ int main() {
 	w[1] = 3;
 	w[2] = 5;
 	w[3] = 4;
-	cout << "Before" << endl;
 	for  (int i = 0 ; i < 5 ; i++){
 		cout << w[i] << endl;
 	}
@@ -39,13 +38,15 @@ int main() {
 	l[0] = 4;
 	l[1] = 5;
 	l[2] = 2;
-	l[4] = 0;
-	for (int i = 0 ; i < 5 ; i++){
-		if (l[i]==0){
-			l[i-1] = 6;
-			break;
+	l[3] = 6;
+	int length = sizeof(l) / sizeof(int);
+	
+	for (int i = 1 ; i <= length ; i++){
+		if (i==length){
+			l[i-1] = 9;
 		}
 	}
+	
 	for (int i = 0 ; i < 5 ; i++){
 		cout << l[i] << endl;
 	}
