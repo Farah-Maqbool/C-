@@ -70,7 +70,7 @@ int main() {
 	for (int i = 0 ; i < 2 ; i++){
 		for (int j = 0 ; j < 2 ; j++){
 			if (i==j){
-				continue;
+				break;
 			}
 			else{
 				int a = matrix_t[i][j];
@@ -83,7 +83,7 @@ int main() {
 	//	Print result
 	for (int i = 0 ; i < 2 ; i++){
 		for (int j = 0 ; j < 2 ; j++){
-			cout << matrix_t[j][i] << endl;
+			cout << matrix_t[i][j] << endl;
 		}
 	}
 	
