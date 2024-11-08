@@ -48,13 +48,23 @@ int main() {
 //  output array.
 	int matrix_1[2][2][2] = {{{1,2},{3,4}},{{5,6},{7,8}}};
 	int matrix_2[2][2][2] = {{{9,10},{11,12}},{{13,14},{15,16}}};
+	int result_matrix[2][2][2];
 	for (int i = 0 ; i < 2 ; i++){
 		for (int j = 0 ; j < 2 ; j++){
 			for (int k = 0 ; k < 2 ; k++){
-				cout << "matrix_1[" << i << "][" << j << "][" << k << "]=" << matrix_1[i][j][k] << endl;
+				result_matrix[i][j][k] = matrix_1[i][j][k] * matrix_2[i][j][k];
 			}
 		}
 	}
+//	print result
+	for (int i = 0 ; i < 2 ; i++){
+		for (int j = 0 ; j < 2 ; j++){
+			for (int k = 0 ; k < 2 ; k++){
+				cout << "Result matrix[" << i << "][" << j << "][" << k << "]= " << result_matrix[i][j][k] << endl;
+			}
+		}
+	}
+	
 	
 
 // Write a C++ program to Transpose Matrix.
