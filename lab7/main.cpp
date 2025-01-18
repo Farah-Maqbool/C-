@@ -1,26 +1,37 @@
 #include <iostream>
+#include <string>
 using namespace std;
-int stack[100], top=-1;
-void push(int val){
-	if (top>=99){
+char stack[8];
+int top=-1;
+void push(char val){
+	if (top>=7){
 		cout << "Stck is Full" << endl;
 	}else{
-		top++;		
+		top++;	
 		stack[top]=val;
 	}
 }
-
-void pop(){
+char peek(){
+	return stack[top];
+}
+char pop(){
 	if (top<0){
 		cout << "stack is empty" << endl;
-	}
+		
+	}   
 	else{
+		char top_value = peek();
 		top--;
+		return top_value;
 	}
 }
 
-int peek(){
-	return stack[top];
+
+
+char second_first(){
+	int s_l = --top;
+	top++;
+	return stack[s_l];
 }
 
 void display(){
@@ -39,7 +50,7 @@ int isEmpty(){
 }
 
 int isFull(){
-	if(top==99){
+	if(top==7){
 		return 1;
 	}
 	else{
@@ -47,18 +58,45 @@ int isFull(){
 	}
 }
 
+bool check_op_in_arr(int size, char op_arr[], char target){
+	for (int i = 0 ; i < size ; i++){
+		if (op_arr[i]==target){
+			return true;
+		}
+	}
+	return false;
+}
+
 int main() {
-	push(4);
-	push(2);
-	push(1);
-	push(3);
-	cout << "Push" << endl;
-	display();
-	cout << "Pop" << endl;
-	pop();
-	display();
-	cout << "Peek " << peek() << endl;
-	cout << "IsEmpty " << isEmpty() << endl;
-	cout << "IsFull " << isFull() << endl;
+//	alphabet
+	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
+//	get Input infix expression
+	string infix_expression;
+	cout << "Enter Infix Expression: ";
+	getline(cin,infix_expression);
+	
+//	check infix expression size so i create the postfix expression array same size
+	int expression_size = infix_expression.size();
+	
+//	postfix expression
+	char postfix_expression[expression_size];
+	int j = 0;
+	int i = 0;
+	while (i<expression_size){
+		
+//		check if the coming element is operand
+		if (alphabet.find(infix_expression[i])!=string::npos){
+			postfix_expression[j] = infix_expression[i];
+			j++;
+		}
+		else{
+			
+		}
+		i++;
+	}
+	for (int i = 0 ; i < expression_size ; i++){
+		cout << postfix_expression[i] << endl;
+	}
 	return 0;
 }
