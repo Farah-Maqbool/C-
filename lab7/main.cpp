@@ -34,23 +34,10 @@ char second_first(){
 	return stack[s_l];
 }
 
-void display(){
-	for (int i=top; i>=0 ; i--){
-		cout << stack[i] << endl;
-	}
-}
+
 
 int isEmpty(){
 	if (top==-1){
-		return 1;
-	}
-	else{
-		return 0;
-	}
-}
-
-int isFull(){
-	if(top==7){
 		return 1;
 	}
 	else{
@@ -145,6 +132,7 @@ int main() {
 		postfix_expression[j] = pop();
 		j++;
 	}
+	
 	for (int i = 0 ; i < expression_size ; i++){
 		cout << postfix_expression[i];
 	}
