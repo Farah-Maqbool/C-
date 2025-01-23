@@ -91,12 +91,62 @@ int main() {
 			j++;
 		}
 		else{
+			char high_p[] = {'*', '/'};
+			char low_p[] = {'-','+'};
 			
+			if (infix_expression[i] == '('){
+				push(infix_expression[i]);
+				
+			}else if (infix_expression[i]==')'){
+				for (int i = top ; i >= 0 ; i--){
+					if (stack[i] == '('){
+						
+						char element = pop();
+						
+						break;
+					}
+					postfix_expression[j] = pop();
+					j++;
+				}
+				
+			}
+			else{
+				if (isEmpty()==1){
+					push(infix_expression[i]);
+				}
+				else if (check_op_in_arr(2, low_p, infix_expression[i]) && 
+				check_op_in_arr(2, high_p, peek())){
+					if (check_op_in_arr(2, low_p, second_first())){
+						char temp_1 = pop();
+						char temp_2 = pop();
+						postfix_expression[j] = infix_expression[temp_1];
+						j++;
+						postfix_expression[j] = infix_expression[temp_2];
+						j++;
+					}
+				}
+				else if ((check_op_in_arr(2, low_p, infix_expression[i]) && 
+				check_op_in_arr(2, low_p, peek())) || 
+				(check_op_in_arr(2, high_p, infix_expression[i]) && 
+				check_op_in_arr(2, high_p, peek()))){
+					
+					postfix_expression[j] = pop();
+					j++;
+					push(infix_expression[i]);
+				}
+				else{
+					push(infix_expression[i]);
+				}
+			}
 		}
 		i++;
 	}
+	for(int i = top ; i >= 0 ; i--){
+		postfix_expression[j] = pop();
+		j++;
+	}
 	for (int i = 0 ; i < expression_size ; i++){
-		cout << postfix_expression[i] << endl;
+		cout << postfix_expression[i];
 	}
 	return 0;
 }
