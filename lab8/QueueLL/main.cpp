@@ -35,11 +35,11 @@ class Queue{
 			if (front == nullptr){
 				cout << "Queue is Empty";
 			}else{
-//				cout << front->value << endl;
-//				Node* ptr = this->front->next;
+				
+				Node* ptr = this->front;
 				front = front->next; 
-//				cout << front->value << endl;
-//				delete ptr;
+				
+				delete ptr;
 			}
 		}
 		void display(){
