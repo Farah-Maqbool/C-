@@ -38,7 +38,7 @@ class Queue{
 				
 				Node* ptr = this->front;
 				front = front->next; 
-				
+
 				delete ptr;
 			}
 		}
